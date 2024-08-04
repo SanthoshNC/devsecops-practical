@@ -5,3 +5,4 @@ Date: 04/08/2024
 #3 Lunch
 #4 Book Festival
 #5 Meet my friends
+#6 Adding this via SSH clone
