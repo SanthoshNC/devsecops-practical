@@ -1,21 +1,16 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: Hello World CI Pipeline
+run-name: ${{ github.actor }} is running Hello World CI Pipeline
 on: [push]
 jobs:
-  devsecops-pipeline:
+  ci-pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
-       
-      - name: Secret Scanning
-        run: echo "Performing Secret Scanning"
 
-      - name: SAST
-        run: echo "Performing SAST" 
+      - name: Docker Build
+        run: docker build -t santhoshnc/hello-app .   
 
-      - name: SCA
-        run: echo "Performing SCA" 
-
-      - name: Container Scanning
-        run: echo "Performing Container Scanning"        
+      - name: Docker Images
+        run: docker images
+      
